@@ -1,183 +1,223 @@
-@import url( https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
-);
 
-/* Global */
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
 }
 
-body {
-    background-image: url('background.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+.sublinks{
+    position: fixed;
+    right: 10px;
+    top: 45vh;
+    transform: translateY(-50%);
+}
+.sublinks li{
+    height: 10px;
+    width: 10px;
+    background: #ccc;
+    border: 1px solid #333;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    list-style: none;
+}
+
+section{
+    height: 150vh;
+    background: linear-gradient(pink, gray);
     background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main_1{
+    padding-top: 100px;
+    height: 100vh;
 }
 
-.fa-bars{
-    display: none;
+section:nth-child(2){
+    background: blue;
+    height: 100vh;
 }
+
+section:nth-child(3){
+    background: red;
+    height: 100vh;
+}
+
+
+section:nth-child(4){
+    background: skyblue;
+    height: 100vh;
+}
+
+
+
+
+
 header{
     position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
     width: 100%;
+    background: transparent;
     padding: 40px 100px;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     transition: 0.6s;
 }
+
 header.sticky{
-    padding: 15px 100px;
     background: #555;
-    border-bottom: 2px solid orangered;
-}
-header .logo{
-    position: relative;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: #F4F4F4;
-    font-size: 2rem;
-    text-shadow: 2px 3px 4px black;
-    border-top: 2px solid orangered;
-    border-bottom: 2px solid #F4F4F4;
-}
-header .logo .highlight{
-    color: orangered;
-}
-header ul{
-    position: relative;
-    display: flex;
-}
-header ul li{
-    position: relative;
-    list-style: none;
-}
-header ul li a{
-    position: relative;
-    text-decoration: none;
-    color: #F4F4F4;
-    font-weight: 500;
-    margin: 0 20px;
-    transition: 0.6s;
-}
-header ul li a:hover{
-    color: orangered;
-}
-.container{
-    padding-top: 100px;
-    color: white;
-}
-.theader{
-    text-align: center;
-    display: flex;
-    overflow-x: scroll;
-    overflow: auto;
-    border-top: 1px solid orangered;
-    border-bottom: 1px solid orangered;
-    height: 15vh;
-    line-height: 15vh;
-}
-.theader a{
-    text-align: center;
-    color: white;
-    padding: 0 20px;
-    font-weight: bolder;
-}
-.fa{
-    font-size: 20px;
-}
-.theader a:hover{
-    transition: 0.6s;
-    color: black;
-    background: lightgray;
-    font-weight: bolder;
+    padding: 15px 100px;
+    border-bottom: 1.5px solid #ff4500;
 }
 
+.nav-bar{
+    
+}
+
+
+header .logo{
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 700;
+    transition: .6s;
+    border-top: 1.5px solid #ff4500;
+    border-bottom: 1.5px solid #fff;
+}
+
+header .logo .highlight{
+    color: #ff4500;
+}
+
+header #dimenu{
+    display: flex;
+}
+
+header ul li{
+    list-style: none;
+}
+
+header ul li a{
+    margin: 20px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+}
+
+.mobile-menu{
+    display: none;
+}
+.menu{
+    display: none;
+}
 
 @media(max-width: 320px){
-    
-.fa-bars{
-    position: absolute;
-    left: 0;
-    margin-left: 4%;
-    font-size: 2rem;
-    color: #F4F4F4;
-    display: block;
+    header .logo{
+        font-size: 1.2rem;
+    }
 }
-header{
+
+@media(max-width: 730px){
+
+    .mobile-menu{
+        display: block;
+        width: 40px;
+        height: 40px;
+        background: #ccc;
+        cursor: pointer;
+        outline: transparent;
+        text-align: center;
+        line-height: 37px;
+        font-size: 30px;
+        border: 1px solid #000;
+        border-radius: 5px;
+    }
+    
+     .mobile-menu:before{
+         content: '\f0c9';
+         font-family: fontAwesome;
+         outline: none;
+         
+     }
+     
+     .mobile-menu.active:before{
+         content: '\f00d';
+         outline: none;
+     }
+    
+    header{
     position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
     width: 100%;
-    padding: 40px 90px;
+    background: #555;
+    padding: 20px 10px;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     transition: 0.6s;
-}
-
-.theader{
-    text-align: center;
-    display: flex;
-    overflow-x: scroll;
-    overflow: auto;
-    border-top: 1px solid orangered;
-    border-bottom: 1px solid orangered;
-    height: 13vh;
-    line-height: 15vh;
-}
-.theader a{
-    text-align: center;
-    color: white;
-    padding: 0 20px;
-    text-transform: capitalize;
-}
-.fa{
-    font-size: 17px;
-    font-weight: 100;
+    border-bottom: 1px solid #ff4500;
 }
 header.sticky{
-    padding: 15px 90px;
-    background: #555;
-    border-bottom: 2px solid orangered;
+    padding: 20px 10px;
 }
-header .logo{
-    position: relative;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: #F4F4F4;
-    font-size: 1.5rem;
-    text-shadow: 2px 3px 4px black;
-    border-top: 2px solid orangered;
-    border-bottom: 2px solid #F4F4F4;
-}
-header .logo .highlight{
-    color: orangered;
-}
-header ul{
-    position: relative;
-    display: none;
-}
-header ul li{
-    position: relative;
-    list-style: none;
-}
-header ul li a{
-    position: relative;
-    text-decoration: none;
-    color: #F4F4F4;
-    font-weight: 500;
-    margin: 0 20px;
-    transition: 0.6s;
-}
-header ul li a:hover{
-    color: orangered;
-}
+
+    
+    header #dimenu{
+        display: none;
+    }
+
+    .logo{
+        font-size: 1.5rem;
+    }
+   
+   .menu{
+       position: fixed;
+       width: 100%;
+       top: 80px;
+       left: 0;
+       height: 100vh;
+       background: #555;
+       display: block;
+       padding: 20px 50px;
+       border-top: 1px solid #ff4500;
+       border-bottom: 1px solid#ff4500;
+       display: none;
+   }
+   
+   .menu.active{
+       display: block;
+       box-shadow: 0 2px 5px rgb(0,0,0,22);
+   }
+   
+   .menu ul{
+       text-align: left;
+       left: 0;
+       margin-left: -60px;
+       margin-top: -65px;
+   }
+   .menu ul li{
+       list-style: none;
+       margin-top: 25.5px;
+   }
+   .menu ul li a{
+       position: fixed;
+       padding: 12px;
+       padding-right: 200%;
+       left: 0;
+       margin-left: -5px;
+       font-size: 17px;
+   }
+   .menu ul li a:hover{
+       background: #ff4500;
+   }
+   .info{
+       margin-left: 10px;
+   }
+   .infos{
+       margin-left: 17px;
+   }
 }
